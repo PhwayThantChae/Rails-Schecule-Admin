@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  speaker: one
+  room: one
+  topic: MyString
+  slide_url: MyText
+  video_url: MyText
+
+two:
+  speaker: two
+  room: two
+  topic: MyString
+  slide_url: MyText
+  video_url: MyText
