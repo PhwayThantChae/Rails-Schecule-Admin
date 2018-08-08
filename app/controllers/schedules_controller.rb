@@ -14,6 +14,8 @@ class SchedulesController < ApplicationController
 
   # GET /schedules/new
   def new
+    @rooms = Room.all
+    @speakers = Speaker.all
     @schedule = Schedule.new
   end
 

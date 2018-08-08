@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Schedules</h1>
+<br>
+<%= link_to '<button class="btn btn-primary" type="button">New Schecule</button>'.html_safe, new_schedule_path %>
+<br>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Speaker</th>
@@ -32,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Schedule', new_schedule_path %>
+

@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Speakers</h1>
-
-<table>
+<%= link_to '<button class="btn btn-primary" type="button">New Speaker</button>'.html_safe,  new_speaker_path  %>
+<br>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -20,14 +21,12 @@
         <td><%= speaker.company %></td>
         <td><%= speaker.position %></td>
         <td><%= speaker.profile_url %></td>
-        <td><%= link_to 'Show', speaker %></td>
-        <td><%= link_to 'Edit', edit_speaker_path(speaker) %></td>
-        <td><%= link_to 'Destroy', speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<button class="btn btn-sm btn-primary" type="button">Show</button>'.html_safe, speaker %></td>
+        <td><%= link_to '<button class="btn btn-sm btn-primary" type="button">Edit</button>'.html_safe, edit_speaker_path(speaker) %></td>
+        <td><%= link_to '<button class="btn btn-sm btn-primary" type="button">Destroy</button>'.html_safe, speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Speaker', new_speaker_path %>

@@ -10,6 +10,15 @@
   </head>
 
   <body>
-    <%= yield %>
+   <%= nav_bar fixed: :top, brand: "Admin Panel" do %>
+    <%= menu_group do %>
+        <%= menu_item "Schedules", schedules_path %>
+        <%= menu_item "Speakers", speakers_path %>
+        <%= menu_item "Rooms", rooms_path %>
+    <% end %>
+<% end %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

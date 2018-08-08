@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Rooms</h1>
-
-<table>
+<%= link_to '<button class="btn btn-primary" type="button">New Room</button>'.html_safe, new_room_path  %>
+<br>
+<table class="table">
   <thead>
     <tr>
       <th>Room number</th>
@@ -18,9 +19,9 @@
         <td><%= room.room_number %></td>
         <td><%= room.building %></td>
         <td><%= room.direction %></td>
-        <td><%= link_to 'Show', room %></td>
-        <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<button class="btn btn-sm btn-primary" type="button">Show</button>'.html_safe, room %></td>
+        <td><%= link_to '<button class="btn btn-sm btn-primary" type="button">Edit</button>'.html_safe, edit_room_path(room) %></td>
+        <td><%= link_to '<button class="btn btn-sm btn-primary" type="button">Destroy</button>'.html_safe, room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Room', new_room_path %>
+
