@@ -20,8 +20,8 @@
   <tbody>
     <% @schedules.each do |schedule| %>
       <tr>
-        <td><%= schedule.speaker %></td>
-        <td><%= schedule.room %></td>
+        <td><%= schedule.speaker.name %></td>
+        <td><%= schedule.room.room_number %></td>
         <td><%= schedule.topic %></td>
         <td><%= schedule.slide_url %></td>
         <td><%= schedule.video_url %></td>

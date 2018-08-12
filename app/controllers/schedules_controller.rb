@@ -1,5 +1,6 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
+  before_action :set_select_collections, only: [:new, :create]
 
   # GET /schedules
   # GET /schedules.json
@@ -12,10 +13,13 @@ class SchedulesController < ApplicationController
   def show
   end
 
-  # GET /schedules/new
-  def new
+  def set_select_collections
     @rooms = Room.all
     @speakers = Speaker.all
+  end
+
+  # GET /schedules/new
+  def new
     @schedule = Schedule.new
   end
 
@@ -26,6 +30,7 @@ class SchedulesController < ApplicationController
   # POST /schedules
   # POST /schedules.json
   def create
+    puts schedule_params
     @schedule = Schedule.new(schedule_params)
 
     respond_to do |format|

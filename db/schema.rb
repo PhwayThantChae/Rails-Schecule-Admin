@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_06_105723) do
+ActiveRecord::Schema.define(version: 2018_08_12_195709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2018_08_06_105723) do
     t.text "video_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "from"
+    t.string "to"
     t.index ["room_id"], name: "index_schedules_on_room_id"
     t.index ["speaker_id"], name: "index_schedules_on_speaker_id"
   end

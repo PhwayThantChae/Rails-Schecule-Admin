@@ -1,3 +1,5 @@
+
+
 <%= form_with(model: schedule, local: true) do |form| %>
   <% if schedule.errors.any? %>
     <div id="error_explanation">
@@ -11,32 +13,43 @@
     </div>
   <% end %>
 <!-- [ @article, @article.comments.build ] -->
+
   <div class="field">
     <%= form.label :speaker_id %>
-    <%= form.text_field :speaker_id %>
+    <%= form.collection_select :speaker_id, @speakers, :id, :name, {prompt: "Select a speaker"}, {class: "form-control"} %>
   </div>
 
   <div class="field">
     <%= form.label :room_id %>
-    <%= form.text_field :room_id %>
+    <%= form.collection_select :room_id, @rooms, :id, :room_number, {prompt: "Select a room"}, {class: "form-control"} %>
   </div>
 
   <div class="field">
     <%= form.label :topic %>
-    <%= form.text_field :topic %>
+    <%= form.text_field :topic , class: "form-control" %>
+  </div>
+
+    <div class="field">
+    <%= form.label :from %>
+    <%= form.text_area :from, class: "form-control" %>
+  </div>
+
+    <div class="field">
+    <%= form.label :to %>
+    <%= form.text_area :to, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :slide_url %>
-    <%= form.text_area :slide_url %>
+    <%= form.text_area :slide_url, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :video_url %>
-    <%= form.text_area :video_url %>
+    <%= form.text_area :video_url, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
