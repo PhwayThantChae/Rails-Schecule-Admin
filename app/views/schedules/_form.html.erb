@@ -29,14 +29,9 @@
     <%= form.text_field :topic , class: "form-control" %>
   </div>
 
-    <div class="field">
-    <%= form.label :from %>
-    <%= form.text_area :from, class: "form-control" %>
-  </div>
-
-    <div class="field">
-    <%= form.label :to %>
-    <%= form.text_area :to, class: "form-control" %>
+  <div class="field">
+    <%= form.label :timeslot %>
+    <%= form.collection_select :timeslot, Schedule::TIMESLOT, :to_s, :to_s, {prompt: "Select timeslot"}, {class: "form-control"} %>
   </div>
 
   <div class="field">

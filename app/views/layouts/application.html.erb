@@ -10,6 +10,8 @@
   </head>
 
   <body>
+  <p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
    <%= nav_bar fixed: :top, brand: "Admin Panel" do %>
     <%= menu_group do %>
         <%= menu_item "Schedules", schedules_path %>
