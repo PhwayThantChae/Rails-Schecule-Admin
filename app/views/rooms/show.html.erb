@@ -15,5 +15,34 @@
   <%= @room.direction %>
 </p>
 
+<% if @room.schedules.length > 0 %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Speaker</th>
+      <th>Room</th>
+      <th>Topic</th>
+      <th>Timeslot</th>
+      <th>Slide url</th>
+      <th>Video url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @room.schedules.each do |schedule| %>
+      <tr>
+        <td><%= schedule.speaker.name %></td>
+        <td><%= schedule.room.room_number %></td>
+        <td><%= schedule.topic %></td>
+        <td><%= schedule.timeslot %></td>
+        <td><%= schedule.slide_url %></td>
+        <td><%= schedule.video_url %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>

@@ -1,6 +1,8 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
-  before_action :set_select_collections, only: [:new, :create]
+  before_action :set_select_collections, only: [:new, :create, :edit]
+  before_action :authenticate_user!
+  # before_action :authenticate_user!, only: [:index, :show, :edit, :update, :destory, :new, :create]
 
   # GET /schedules
   # GET /schedules.json
@@ -11,11 +13,6 @@ class SchedulesController < ApplicationController
   # GET /schedules/1
   # GET /schedules/1.json
   def show
-  end
-
-  def set_select_collections
-    @rooms = Room.all
-    @speakers = Speaker.all
   end
 
   # GET /schedules/new
@@ -76,6 +73,11 @@ class SchedulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
-      params.require(:schedule).permit(:speaker_id, :room_id, :topic, :slide_url, :video_url)
+      params.require(:schedule).permit(:speaker_id, :room_id, :topic,:timeslot, :slide_url, :video_url)
+    end
+
+    def set_select_collections
+      @rooms = Room.all
+      @speakers = Speaker.all
     end
 end

@@ -2,17 +2,22 @@
 
 <p>
   <strong>Speaker:</strong>
-  <%= @schedule.speaker %>
+  <%= @schedule.speaker.name %>
 </p>
 
 <p>
   <strong>Room:</strong>
-  <%= @schedule.room %>
+  <%= @schedule.room.room_number %>
 </p>
 
 <p>
   <strong>Topic:</strong>
   <%= @schedule.topic %>
+</p>
+
+<p>
+  <strong>Timeslote:</strong>
+  <%= @schedule.timeslot %>
 </p>
 
 <p>

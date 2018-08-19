@@ -31,7 +31,9 @@
 
   <div class="field">
     <%= form.label :timeslot %>
-    <%= form.collection_select :timeslot, Schedule::TIMESLOT, :to_s, :to_s, {prompt: "Select timeslot"}, {class: "form-control"} %>
+    <%# <%= form.collection_select :timeslot, Schedule::TIMESLOT, :to_s, :to_s, {prompt: "Select timeslot"}, {class: "form-control"} %>
+    <%# <%= form.select :timeslot, Schedule::TIMESLOT, {:prompt => "Choose One"}, class: "form-control" %>
+    <%= form.select(:timeslot, Schedule::TIMESLOT,{:prompt => "Choose One"}, class: "form-control") %>
   </div>
 
   <div class="field">
