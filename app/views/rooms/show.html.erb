@@ -1,22 +1,21 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Room number:</strong>
-  <%= @room.room_number %>
-</p>
-
-<p>
-  <strong>Building:</strong>
-  <%= @room.building %>
-</p>
-
-<p>
-  <strong>Direction:</strong>
-  <%= @room.direction %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <dl class="row">
+      <dt class="col-sm-3">Room number:</dt>
+      <dd class="col-sm-9"><%= @room.room_number %></dd>
+      <br><br>
+      <dt class="col-sm-3">Building:</dt>
+      <dd class="col-sm-9"><%= @room.building %></dd>
+      <br><br>
+      <dt class="col-sm-3">Direction:</dt>
+      <dd class="col-sm-9"><%= @room.direction %></dd>
+    </dl>
+  </div>
+</div>
 
 <% if @room.schedules.length > 0 %>
-<table class="table table-striped">
+<table class="table table-striped table-responsive">
   <thead>
     <tr>
       <th>Speaker</th>
@@ -44,5 +43,5 @@
 </table>
 <% end %>
 
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<%= link_to '<button class="btn btn-link" type="button">Edit</button>'.html_safe, edit_room_path(@room) %> |
+<%= link_to '<button class="btn btn-link" type="button">Back</button>'.html_safe, rooms_path %>

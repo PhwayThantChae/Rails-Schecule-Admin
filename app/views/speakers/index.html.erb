@@ -1,9 +1,10 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Speakers</h1>
+<br>
 <%= link_to '<button class="btn btn-primary" type="button">New Speaker</button>'.html_safe,  new_speaker_path  %>
 <br>
-<table class="table">
+<table class="table table-striped table-responsive">
   <thead>
     <tr>
       <th>Name</th>
@@ -21,9 +22,9 @@
         <td><%= speaker.company %></td>
         <td><%= speaker.position %></td>
         <td><%= speaker.profile_url %></td>
-        <td><%= link_to '<button class="btn btn-sm btn-primary" type="button">Show</button>'.html_safe, speaker %></td>
-        <td><%= link_to '<button class="btn btn-sm btn-primary" type="button">Edit</button>'.html_safe, edit_speaker_path(speaker) %></td>
-        <td><%= link_to '<button class="btn btn-sm btn-primary" type="button">Destroy</button>'.html_safe, speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '<button class="btn btn-sm btn-success" type="button">Show</button>'.html_safe, speaker %></td>
+        <td><%= link_to '<button class="btn btn-sm btn-info" type="button">Edit</button>'.html_safe, edit_speaker_path(speaker) %></td>
+        <td><%= link_to '<button class="btn btn-sm btn-warning" type="button">Destroy</button>'.html_safe, speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

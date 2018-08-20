@@ -13,20 +13,20 @@
 
   <div class="field">
     <%= form.label :room_number %>
-    <%= form.text_field :room_number %>
+    <%= form.text_field :room_number, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :building %>
-    <%= form.text_field :building %>
+    <%= form.text_field :building, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :direction %>
-    <%= form.text_area :direction %>
+    <%= form.text_area :direction, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

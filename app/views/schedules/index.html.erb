@@ -1,40 +1,53 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Schedules</h1>
 <br>
 <%= link_to '<button class="btn btn-primary" type="button">New Schedule</button>'.html_safe, new_schedule_path %>
-<br>
+<br><br>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Speaker</th>
-      <th>Room</th>
-      <th>Topic</th>
-      <th>Timeslot</th>
-      <th>Slide url</th>
-      <th>Video url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul class="nav nav-tabs nav-justified">
+  <% Schedule::TIMESLOT.each_with_index do |timeslot, index| %>
+    <li class="<%= 'active' if index == 0 %>">
+      <a data-toggle="tab" href="#<%= index %>">
+        <%= timeslot %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+<div class="tab-content">
+    <% Schedule::TIMESLOT.each_with_index do |timeslot, index| %>
+      <div id="<%=index %>" class="tab-pane fade <%= ' in active' if index == 0 %>">
+        <table class="table table-striped table-responsive">
+          <thead>
+            <tr>
+              <th>Speaker</th>
+              <th>Room</th>
+              <th>Topic</th>
+              <th>Timeslot</th>
+              <th>Slide url</th>
+              <th>Video url</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
 
-  <tbody>
-    <% @schedules.each do |schedule| %>
-      <tr>
-        <td><%= schedule.speaker.name %></td>
-        <td><%= schedule.room.room_number %></td>
-        <td><%= schedule.topic %></td>
-        <td><%= schedule.timeslot %></td>
-        <td><%= schedule.slide_url %></td>
-        <td><%= schedule.video_url %></td>
-        <td><%= link_to 'Show', schedule %></td>
-        <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
-        <td><%= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+          <tbody>
+            <% @schedulesAll.each do |schedule| %>
+            <% if schedule.timeslot == timeslot %>
+              <tr>
+                <td><%= schedule.speaker.name %></td>
+                <td><%= schedule.room.room_number %></td>
+                <td><%= schedule.topic %></td>
+                <td><%= schedule.timeslot %></td>
+                <td><%= schedule.slide_url %></td>
+                <td><%= schedule.video_url %></td>
+                <td><%= link_to '<button class="btn btn-sm btn-success" type="button">Show</button>'.html_safe, schedule %></td>
+                <td><%= link_to '<button class="btn btn-sm btn-info" type="button">Edit</button>'.html_safe, edit_schedule_path(schedule) %></td>
+                <td><%= link_to '<button class="btn btn-sm btn-warning" type="button">Destroy</button>'.html_safe, schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
+</div>
 
 

@@ -1,34 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <dl class="row">
+      <dt class="col-sm-3">Speaker:</dt>
+      <dd class="col-sm-9"><%= @schedule.speaker.name %></dd>
+      <br><br>
+      <dt class="col-sm-3">Room:</dt>
+      <dd class="col-sm-9"><%= @schedule.room.room_number %></dd>
+      <br><br>
+      <dt class="col-sm-3">Topic:</dt>
+      <dd class="col-sm-9"><%= @schedule.topic %></dd>
+      <br><br>
+      <dt class="col-sm-3">Timeslot:</dt>
+      <dd class="col-sm-9"><%= @schedule.timeslot %></dd>
+      <br><br>
+      <dt class="col-sm-3">Slide url:</dt>
+      <dd class="col-sm-9"><%= @schedule.slide_url %></dd>
+      <br><br>
+      <dt class="col-sm-3">Video url:</dt>
+      <dd class="col-sm-9"><%= @schedule.video_url %></dd>
+    </dl>
+  </div>
+</div>
 
-<p>
-  <strong>Speaker:</strong>
-  <%= @schedule.speaker.name %>
-</p>
-
-<p>
-  <strong>Room:</strong>
-  <%= @schedule.room.room_number %>
-</p>
-
-<p>
-  <strong>Topic:</strong>
-  <%= @schedule.topic %>
-</p>
-
-<p>
-  <strong>Timeslote:</strong>
-  <%= @schedule.timeslot %>
-</p>
-
-<p>
-  <strong>Slide url:</strong>
-  <%= @schedule.slide_url %>
-</p>
-
-<p>
-  <strong>Video url:</strong>
-  <%= @schedule.video_url %>
-</p>
-
-<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
-<%= link_to 'Back', schedules_path %>
+<%= link_to '<button class="btn btn-link" type="button">Edit</button>'.html_safe, edit_schedule_path(@schedule) %> |
+<%= link_to '<button class="btn btn-link" type="button">Back</button>'.html_safe, schedules_path %>

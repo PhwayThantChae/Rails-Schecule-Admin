@@ -1,3 +1,4 @@
+
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
   before_action :set_select_collections, only: [:new, :create, :edit]
@@ -7,7 +8,7 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-    @schedules = Schedule.all
+    @schedulesAll = Schedule.all
   end
 
   # GET /schedules/1

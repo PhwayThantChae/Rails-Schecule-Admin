@@ -1,26 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <dl class="row">
+      <dt class="col-sm-3">Name:</dt>
+      <dd class="col-sm-9"><%= @speaker.name %></dd>
+      <br><br>
+      <dt class="col-sm-3">Company:</dt>
+      <dd class="col-sm-9"><%= @speaker.company %></dd>
+      <br><br>
+      <dt class="col-sm-3">Position:</dt>
+      <dd class="col-sm-9"><%= @speaker.position %></dd>
+      <br><br>
+      <dt class="col-sm-3">Profile url:</dt>
+      <dd class="col-sm-9"><%= @speaker.profile_url %></dd>
+    </dl>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @speaker.name %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @speaker.company %>
-</p>
-
-<p>
-  <strong>Position:</strong>
-  <%= @speaker.position %>
-</p>
-
-<p>
-  <strong>Profile url:</strong>
-  <%= @speaker.profile_url %>
-</p>
 <% if @speaker.schedules.length > 0 %>
-<table class="table table-striped">
+<table class="table table-striped table-responsive">
   <thead>
     <tr>
       <th>Speaker</th>
@@ -48,5 +45,5 @@
 </table>
 <% end %>
 
-<%= link_to 'Edit', edit_speaker_path(@speaker) %> |
-<%= link_to 'Back', speakers_path %>
+<%= link_to '<button class="btn btn-link" type="button">Edit</button>'.html_safe, edit_speaker_path(@speaker) %> |
+<%= link_to '<button class="btn btn-link" type="button">Back</button>'.html_safe, speakers_path %>
