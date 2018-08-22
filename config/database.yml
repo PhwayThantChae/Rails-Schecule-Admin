@@ -85,6 +85,6 @@ test:
 #
 production:
   <<: *default
-  database: itcamp-admin_production
-  username: itcamp-admin
+  database: itcamp_admin_production
+  username: itcamp_admin
   password: <%= ENV['ITCAMP-ADMIN_DATABASE_PASSWORD'] %>
