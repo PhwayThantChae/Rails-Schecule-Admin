@@ -4,14 +4,16 @@
       <dt class="col-sm-3">Name:</dt>
       <dd class="col-sm-9"><%= @speaker.name %></dd>
       <br><br>
+      <% if @speaker.profile_photo.attached? %>
+        <dt class="col-sm-3">Photo:</dt>
+        <dd class="col-sm-9 "><%= image_tag @speaker.profile_photo, class: 'speaker-img' %></dd>
+      <% end %>
+      <br><br>
       <dt class="col-sm-3">Company:</dt>
       <dd class="col-sm-9"><%= @speaker.company %></dd>
       <br><br>
       <dt class="col-sm-3">Position:</dt>
       <dd class="col-sm-9"><%= @speaker.position %></dd>
-      <br><br>
-      <dt class="col-sm-3">Profile url:</dt>
-      <dd class="col-sm-9"><%= @speaker.profile_url %></dd>
     </dl>
   </div>
 </div>

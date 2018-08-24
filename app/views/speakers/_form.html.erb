@@ -1,7 +1,7 @@
 <%= form_with(model: speaker, local: true) do |form| %>
-  <% if speaker.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(speaker.errors.count, "error") %> prohibited this speaker from being saved:</h2>
+  <% if speaker.errors.any?  %>
+    <div class="<%= 'alert alert-danger' if @speaker.errors.any?%>">
+      <h5><%= pluralize(speaker.errors.count, "error") %> prohibited this speaker from being saved:</h5>
 
       <ul>
       <% speaker.errors.full_messages.each do |message| %>
@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group <%= 'has-error' if @speaker.errors.has_key?(:name) %>">
     <%= form.label :name %>
     <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group <%= 'has-error' if @speaker.errors.has_key?(:profile_photo) %>">
+    <%= form.label :profile_photo %>
+    <%= form.file_field :profile_photo, class: "form-control" %>
+  </div>
+
+  <div class="form-group <%= 'has-error' if @speaker.errors.has_key?(:company) %>" >
     <%= form.label :company %>
     <%= form.text_field :company, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group <%= 'has-error' if @speaker.errors.has_key?(:position) %>">
     <%= form.label :position %>
     <%= form.text_field :position, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :profile_url %>
-    <%= form.text_area :profile_url, class: "form-control" %>
   </div>
 
   <div class="actions">

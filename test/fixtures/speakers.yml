@@ -4,10 +4,8 @@ one:
   name: MyString
   company: MyString
   position: MyString
-  profile_url: MyText
 
 two:
   name: MyString
   company: MyString
   position: MyString
-  profile_url: MyText

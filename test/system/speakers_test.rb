@@ -17,7 +17,6 @@ class SpeakersTest < ApplicationSystemTestCase
     fill_in "Company", with: @speaker.company
     fill_in "Name", with: @speaker.name
     fill_in "Position", with: @speaker.position
-    fill_in "Profile Url", with: @speaker.profile_url
     click_on "Create Speaker"
 
     assert_text "Speaker was successfully created"
@@ -31,7 +30,6 @@ class SpeakersTest < ApplicationSystemTestCase
     fill_in "Company", with: @speaker.company
     fill_in "Name", with: @speaker.name
     fill_in "Position", with: @speaker.position
-    fill_in "Profile Url", with: @speaker.profile_url
     click_on "Update Speaker"
 
     assert_text "Speaker was successfully updated"

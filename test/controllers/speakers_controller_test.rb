@@ -17,7 +17,7 @@ class SpeakersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create speaker" do
     assert_difference('Speaker.count') do
-      post speakers_url, params: { speaker: { company: @speaker.company, name: @speaker.name, position: @speaker.position, profile_url: @speaker.profile_url } }
+      post speakers_url, params: { speaker: { company: @speaker.company, name: @speaker.name, position: @speaker.position} }
     end
 
     assert_redirected_to speaker_url(Speaker.last)

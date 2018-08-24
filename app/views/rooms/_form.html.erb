@@ -1,6 +1,6 @@
 <%= form_with(model: room, local: true) do |form| %>
   <% if room.errors.any? %>
-    <div id="error_explanation">
+    <div class="<%= 'alert alert-danger' if @room.errors.any?%>">
       <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
 
       <ul>
@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field <%= 'has-error' if @room.errors.has_key?(:room_number) %>">
     <%= form.label :room_number %>
     <%= form.text_field :room_number, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field <%= 'has-error' if @room.errors.has_key?(:building) %>">
     <%= form.label :building %>
     <%= form.text_field :building, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field <%= 'has-error' if @room.errors.has_key?(:direction) %>">
     <%= form.label :direction %>
     <%= form.text_area :direction, class: "form-control" %>
   </div>
