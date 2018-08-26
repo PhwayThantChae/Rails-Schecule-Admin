@@ -5,10 +5,14 @@ Rails.application.routes.draw do
   resources :speakers
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
- 
+  namespace :api do
+    namespace :v1 do
+      resources :schedules
+      resources :rooms
+      resources :speakers
+    end
+  end
 
-
- 
   root to: 'schedules#index'
   # devise_scope :user do
   #   root to: "devise/sessions#new"
