@@ -25,7 +25,7 @@ development:
   <<: *default
   username: postgres
   password: root
-  database: itcamp-admin_development
+  database: itcamp_admin_development
 
 
   # The specified database role being used to connect to postgres.
@@ -62,7 +62,7 @@ test:
   <<: *default
   username: postgres
   password: root
-  database: itcamp-admin_test
+  database: itcamp_admin_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
